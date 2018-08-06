@@ -2,13 +2,21 @@
 import React, { Component } from 'react';
 import { RecipeDisplay } from '../components/RecipeDisplay';
 import { Button } from '../components/Button';
+import styled from 'styled-components';
+
+
+export const StyledContainer = styled.div`
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+`;
 
 export class RecipeContainer extends Component {
     
     constructor( props ) {
         super( props );
         this.state = {
-            imageUrl: 'Fetching data...',
+            imageUrl: 'http://vietnamtravel.ca/wp-content/uploads/2018/05/japan.jpg',
             recipeName: 'Fetching data...',
             calories: 'Fetching data...',
             recipeUrl: 'Fetching data...',
@@ -44,10 +52,10 @@ export class RecipeContainer extends Component {
 
     render() {
         return (
-            <div>
+            <StyledContainer>
                 <RecipeDisplay recipe={ this.state }/>
                 <Button onClick={ this.showRandomRecipe }/>
-            </div>
+            </StyledContainer>
         );
     }
 
