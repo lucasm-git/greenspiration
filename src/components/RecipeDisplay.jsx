@@ -22,8 +22,21 @@ export const StyledImage = styled.img`
     border: 2px solid black;
 `;
 
+export const StyledH2 = styled.h2`
+    margin-bottom: 0;
+`;
+
+export const StyledP = styled.p`
+    margin-bottom: 2.5rem;
+    color: #666;
+`;
+
 export const StyledLink = styled.a`
     text-decoration: none;
+    
+    &:hover {
+        text-decoration: underline;
+    }
     &:visited {
         color: blue;
     }
@@ -43,8 +56,8 @@ export class RecipeDisplay extends Component {
         return(
             <StyledDiv>
                 <StyledImage style={{backgroundImage: 'url(' + this.props.recipe.imageUrl + ')' }} alt={''}/>
-                <h2>{ this.props.recipe.recipeName }</h2>
-                <p>{ this.props.recipe.calories } kcal</p>
+                <StyledH2>{ this.props.recipe.recipeName }</StyledH2>
+                <StyledP>{ this.props.recipe.calories } kcal</StyledP>
                 <StyledLink href={ this.props.recipe.recipeUrl } target="_blank">Go to source page</StyledLink>
             </StyledDiv>
         );

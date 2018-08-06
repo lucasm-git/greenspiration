@@ -15,6 +15,12 @@ export const GlobalContainer = styled.div`
 
 class App extends Component {
   render() {
+
+    let position = {
+      top: Math.random() * 1800,
+      left: Math.random() * 1800
+    };
+
     return (
       <GlobalContainer>
         <RecipeContainer />
