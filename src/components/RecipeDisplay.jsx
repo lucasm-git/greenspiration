@@ -1,5 +1,5 @@
 // Contains the API call logic and fetch and stuff, and also has the HTML that actually organizes the display
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 
@@ -7,15 +7,26 @@ import PropTypes from 'prop-types';
 // As this components only is responsible for rendering something, I turned it into a STATELESS FUNCTIONAL COMPONENT
 // ***************************
 
-export const RecipeDisplay = props => {
-    return(
-        <div>
-            <img src={ props.recipe.imageUrl } />
-            <p>{ props.recipe.recipeName }</p>
-            <p>{ props.recipe.calories }</p>
-            <a href={ props.recipe.recipeUrl } target="_blank">Go to source page</a>
-        </div>
-    );
+export class RecipeDisplay extends Component {
+
+    constructor( props ) {
+        super( props );
+    }
+    
+    shouldComponentUpdate( nextProps ) {
+        return this.props.recipe != nextProps.recipe;
+    }
+    
+    render(){
+        return(
+            <div>
+                <img src={ this.props.recipe.imageUrl } alt={ this.props.recipe.recipeName } />
+                <p>{ this.props.recipe.recipeName }</p>
+                <p>{ this.props.recipe.calories } kcal</p>
+                <a href={ this.props.recipe.recipeUrl } target="_blank">Go to source page</a>
+            </div>
+        );
+    }
 }
 
 RecipeDisplay.propTypes = {

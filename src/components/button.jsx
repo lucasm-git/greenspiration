@@ -3,7 +3,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-
 // ***************************
 // As this components only is responsible for rendering something, I turned it into a STATELESS FUNCTIONAL COMPONENT
 // ***************************

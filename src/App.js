@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { RecipeContainer } from './containers/RecipeContainer';
 import './../node_modules/modern-normalize/modern-normalize.css';
